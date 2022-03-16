@@ -411,7 +411,7 @@ const requests = [{
 "info": "2005 Bugatti Veyron is a coupe car and was released in 2005 by the make Bugatti. 2005 Bugatti Veyron has 2 doors, pertrol or diesel engines. Review all the trims available.",
 "img_url": "https://www.cars-data.com/webp/bugatti/bugatti-veyron_325_10.webp"
 }`,
-        request: '/cars',
+        request: '',
         data: `
 {
 "company": "Bugatti",
@@ -443,7 +443,7 @@ const requests = [{
 "info": "2018 Mercedes-Benz G-class is a suv car and was released in 2018 by the make Mercedes-Benz. 2018 Mercedes-Benz G-class has 5 doors, pertrol or diesel engines. Review all the trims available.",
 "img_url": "https://www.cars-data.com/webp/mercedes/mercedes-benz-g-class_4266_8.webp"
 }`,
-        request: '/cars/:idCar',
+        request: '/:idCar',
         data: `
 {
 "acknowledged": true,
@@ -457,7 +457,7 @@ const requests = [{
     },
     {
         body: 'without body request',
-        request: '/cars/:idCar',
+        request: '/:idCar',
         data: `
 {
 "deletedCount": 1
