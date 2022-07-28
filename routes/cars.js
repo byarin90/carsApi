@@ -20,7 +20,7 @@ router.get("/", async(req, res) => {
 router.get("/:id", async(req, res) => {
     try {
         let id = req.params.id
-        let data = await CarModel.find({ _id: id })
+        let data = await CarModel.findOne({ _id: id })
         res.json(data);
 
     } catch (err) {
