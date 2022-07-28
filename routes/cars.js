@@ -15,7 +15,17 @@ router.get("/", async(req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json({ msg_err: "There problem in server try again later" })
+    }
+})
+router.get("/:id", async(req, res) => {
+    try {
+        let id = req.params.id
+        let data = await CarModel.find({ _id: id })
+        res.json(data);
 
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ msg_err: "There problem in server try again later" })
     }
 })
 
