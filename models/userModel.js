@@ -1,7 +1,6 @@
 const mongoose = require("mongoose"); //connect to mongoose module
 const Joi = require("joi"); //connect to joi module
 const jwt = require("jsonwebtoken"); //connect to jsonwebtoken module
-const { config } = require("../config/secret");
 
 
 //create a Schema, Need same properties like dataBase
@@ -29,7 +28,7 @@ exports.UserModel = mongoose.model("users", userSchema);
 
 //Create Token of the user
 exports.genToken = (_id) => { //the function get UserID
-        let token = jwt.sign({ _id }, `${config.tokenSecret}`, { expiresIn: "600mins" }); //Token properties
+        let token = jwt.sign({ _id }, `${process.env.TOKEN_SECRET}`, { expiresIn: "600mins" }); //Token properties
         //(jwt.sign({ ID of User }, `SecretWord`, { expiresIn: "Time to expired" }))
         return token; // return the token created
     }

@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken"); //call to jsonwebtoken module
-const { config } = require("../config/secret");
-
+require('dotenv').config()
 
 exports.auth = (req, res, next) => {
     // if token sent
@@ -10,7 +9,7 @@ exports.auth = (req, res, next) => {
     }
     try {
         // check if token is expired or token exists (jwt.verify(token,SecretWord))
-        let decodeToken = jwt.verify(token, `${config.tokenSecret}`); //Token authentication
+        let decodeToken = jwt.verify(token, `${process.env.TOKEN_SECRET}`); //Token authentication
         // Produces a property within the empty parameter that is the same
         // For all the functions in the routing of the rout
         req.tokenData = decodeToken; //(req) --> Global memory from middleware function to route
