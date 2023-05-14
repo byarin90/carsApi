@@ -127,6 +127,23 @@ router.delete("/:delID", auth, async(req, res) => {
 })
 
 
+router.get('/categories', async(req, res) => {
+    try {
+        let data = await CarModel.distinct("category");
+        const categories = [];
+        data.forEach((item) => {
+            categories.push({
+                label: item.toLowerCase(),
+                value: item
+            })
+        })
+        res.json(categories);
+    } catch (err) {
+        console.log(err);
+    }
+})
+
+
 
 
 

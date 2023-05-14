@@ -5,7 +5,7 @@ const { routesInit, corsAccessControl } = require("./routes/config_routes"); // 
 require("./db/mongoConnect"); // Links the mongo to app
 require('dotenv').config()
 
-const app = express(); // app of express        
+const app = express(); // app of expresss        
 
 app.use(express.json()); // app of jsons
 app.use(express.static(path.join(__dirname, "public")));
